@@ -9,12 +9,12 @@ void* threadfunc(void* arg){
 	return NULL;
 }
 int main(){
-	pthread_t thread[3];
+	pthread_t threads[3];
 	int ids[3]={1,2,3};
 	for(int i=0;i<3;i++)
 		pthread_create(&thread[i], NULL,threadfunc,&ids[i]);
 	for(int i=0;i<3;i++)
-		pthread_join(thread[i],NULL);
+		pthread_join(&thread[i],NULL);
 	sem_destroy(&sem);
 	return 0;
 }
