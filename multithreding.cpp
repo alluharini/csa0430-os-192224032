@@ -14,7 +14,7 @@ int main() {
         pthread_create(&threads[i], NULL, threadFunction, &args[i]);
 
     for (int i = 0; i < 3; i++)
-        pthread_join(threads[i], NULL);
+        pthread_join(&threads[i], NULL);
 
     return 0;
 }
